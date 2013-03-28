@@ -23,6 +23,9 @@ qq.FineUploaderBasic = function(o){
             minSizeLimit: 0,
             stopOnFirstInvalidFile: true
         },
+        response:{
+            parser:null
+        },
         callbacks: {
             onSubmit: function(id, name){},
             onComplete: function(id, name, responseJSON){},
@@ -333,6 +336,7 @@ qq.FineUploaderBasic.prototype = {
             endpointStore: this._endpointStore,
             chunking: this._options.chunking,
             resume: this._options.resume,
+            parseResponse: this._options.response.parser,
             blobs: this._options.blobs,
             log: function(str, level) {
                 self.log(str, level);
